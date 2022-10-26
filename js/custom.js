@@ -50,3 +50,7 @@ $(document).ready(function() {
 
      })
 })
+
+$('.navbar-toggler').click(function(){
+    $('#navbarResponsive').show();       /*Exibir lista em menu hamburger */
+})
