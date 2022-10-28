@@ -69,7 +69,6 @@ a {
 }
 .bg-dark {
 	background-color: #fff!important;
-	border-bottom: 1px solid #eee;
 }
 #navbarResponsive {
 	z-index: 999;
@@ -157,7 +156,6 @@ a {
 }
 .featured-item {
 	border-radius: 5px;
-	border: 1px solid #eee;
 	padding: 20px;
 	transition: all 0.5s;
 }
@@ -728,6 +726,9 @@ a {
 
 @media (max-width: 767px) {
 
+	.navbar-brand {
+		margin: 0;
+	}
 	.subscribe-form .main-content form input.button {
 		margin-top: 20px;
 	}
@@ -736,4 +737,10 @@ a {
 		text-align: left;
 	} 
 
+}
+
+@media (max-width:480px) {
+	.featured-item {
+		padding: 0;
+	}
 }
