@@ -14,19 +14,20 @@
             font-size: 62.5%;
         }
         body {
-            background: rgb(228, 219, 219);
+            background: #fff;
             overflow-x: hidden;
         }
-        .col {
+        #header {
             text-align: center;
             margin-top: 4rem;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #3a8bcd;;
         }
         .col-6 {
-            background-image: url(./img/paper.webp);
-            background-repeat: no-repeat;
-            text-align: center;
             margin-top: 2rem;
+            margin-bottom: 2rem;
+            line-height: 40px;
+            text-align: center;
         }
         h1 {
             color: #3a8bcd;
@@ -36,13 +37,21 @@
         }
         #footer {
             color: #333;
-            width: 80%;
+            margin: 4rem;
             text-align: center;
         }
-        @media(max-width: 480px) {
+        .sub-footer {
+            border-top: 1px solid #7a7a7a;
+            text-align: center;
+        }
+        .sub-footer p {
+            font-size: 12px;
+            color: #7a7a7a;
+            line-height: 60px;
+        }
+        @media(max-width: 767px) {
             .col-6 {
                 width: 100%;
-                text-align: center;
             }
         }
     </style>
@@ -51,28 +60,38 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col" id="logo">
-                <img src="./img/header-logo.png" alt="">
+            <div class="col" id="header">
+                <a href="index.html"><img src="./img/about.png" alt="logo"></a>
             </div>
         </div>
         <div class="row">
             <div class="col-6 sm-12">
-                <div class="col-6 sm-12">
-                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</h1><br>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius quia rerum et blanditiis nihil! Velit impedit voluptatum, eos iste sint dignissimos commodi saepe sit nesciunt, veniam aspernatur unde. Labore.</h2>
-                </div>
+                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</h1><br>
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, eius quia rerum et blanditiis nihil! Velit impedit voluptatum, eos iste sint dignissimos commodi saepe sit nesciunt, veniam aspernatur unde. Labore.</h2><br><h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde blanditiis ratione illo fuga numquam doloremque accusamus libero voluptate vitae officia, hic voluptatem neque nemo odit at quasi beatae. Modi, dolor.</h2>
             </div>
             <div class="col-6 sm-12">
-                <img src="./img/carrinho.webp" alt="">
+                <img src="./img/about-us.jpg" alt="about-us">
             </div>
         </div>
         <div class="row">
-            <div class="col" id="footer">
+            <div class="col-12 sm-12" id="footer">
+                <h2>Lorem ipsum dolor</h2>
                 <h3>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum natus, maiores quisquam accusamus ad rem, nisi, aperiam ab atque eligendi numquam tenetur maxime!<br> Nihil tenetur est non temporibus asperiores earum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellat ratione, autem non sapiente aut natus necessitatibus quae dolorum perferendis pariatur doloremque, asperiores adipisci in tenetur dolore laborum. Odio, quod.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum natus, maiores quisquam accusamus ad rem, nisi, aperiam ab atque eligendi numquam tenetur maxime! Nihil tenetur est non temporibus asperiores earum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellat ratione, autem non sapiente aut natus necessitatibus quae dolorum perferendis pariatur doloremque, asperiores adipisci in tenetur dolore laborum. Odio, quod.<br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, sapiente similique, facilis voluptatem dolor blanditiis beatae dolore repudiandae voluptatum assumenda vero, numquam quaerat dicta harum. Pariatur rem at voluptate voluptas?
                 </h3>
             </div>
         </div>
     </div>
-</body>
-</html>
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright-text">
+                        <p>WebStore &copy; Todos os direitos reservados
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
