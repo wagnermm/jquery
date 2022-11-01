@@ -2,21 +2,21 @@
 // jQuery(function($) {
 
 $(document).ready(function() { 
-
+    
     $('.owl-carousel').owlCarousel();
-
+    
     let titulos = $('h4')  // tag
-
+    
     let itens = $('.feature')  // class
-
+    
     let destaques = $('#feature')  // id
-
+    
     console.log(titulos.first());
-
+    
     // configuracao de produtos
-
+    
     $('.featured-item a').addClass('btn btn-dark stretch-link');
-
+    
     //$('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
@@ -28,29 +28,32 @@ $(document).ready(function() {
     // $('.featured-item:first h4').fadeIn(2000)
     // $('.featured-item:first h4').fadeOut()
     //  $('.featured-item:first h4').css('color', '#f00')
-
+    
     $('.featured-item h4').dblclick( function(){
-
+        
         $(this).css({
             'color': '#f00',
             'background': '#ff0',
             'font-weight': '100',
         });
-
-     });
-
-     /*
-      * Manipulação de eventos
-      */
-     $('.featured-item a').on('blur', function(event){
-
+        
+    });
+    
+    /*
+    * Manipulação de eventos
+    */
+    $('.featured-item a').on('blur', function(event){
+        
         event.preventDefault();
-
+        
         alert('Produto esgotado');
-
-     })
+        
+    })
 })
 
+
+/*Exibir lista em menu hamburger */
+
 $('.navbar-toggler').click(function(){
-    $('#navbarResponsive').show();       /*Exibir lista em menu hamburger */
+    $('#navbarResponsive').show();
 })

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+    overflow-x: hidden;
+}
+.container {
+    margin-top: 5rem;
+    text-align: center;
+    color: white;
+}
+.form {
+    margin-top: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px solid dodgerblue;
+    border-radius: 15px;
+}
+p {
+    font-size: 22px;
+}
+.input-box {
+    margin-bottom: 26px;
+    position: relative;
+}
+.input-user {
+    background: none;
+    border: none;
+    margin-top: 1rem;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+input:focus {
+    border-color: #3a8bcd
+}
+.btn {
+    margin-top: 1rem;
+    background-color: rgb(20, 147, 220);
+    color: white;
+}
+.btn:hover {
+    background-color: #308bd4;
+    color: white;
+}
+.btn:disabled {
+    background: rgb(21, 21, 85);
+    color: #fff;
+    opacity: .4;
+    cursor: default;
+}
+.mensagem-erro {
+    color: darkred;
+    font-size: 16px;
+    font-weight: bolder;
+}
+@media(max-width: 767px) {
+    .col-6 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    #carrinho {
+        width: 100%;
+    }
+}
+@media(max-width:1024px) {
+    #carrinho {
+        width: 100%;
+    }
+}

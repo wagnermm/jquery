@@ -5,70 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./vandor/bootstrap/css/bootstrap.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
-            overflow-x: hidden;
-        }
-        .container {
-            margin-top: 5rem;
-            text-align: center;
-            color: white;
-        }
-        .form {
-            margin-top: 2rem;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            border-radius: 15px;
-            border: 3px solid dodgerblue;
-            border-radius: 15px;
-        }
-        p {
-            font-size: 22px;
-        }
-        .input-box {
-            margin-bottom: 26px;
-            position: relative;
-        }
-        .input-user {
-            background: none;
-            border: none;
-            margin-top: 1rem;
-            border-bottom: 1px solid white;
-            outline: none;
-            color: white;
-            width: 100%;
-            text-align: center;
-        }
-        .btn {
-            margin-top: 1rem;
-            background-color: rgb(20, 147, 220);
-            color: white;
-        }
-        .btn:hover {
-            background-color: #3a8bcd;
-            color: white;
-        }
-        @media(max-width: 767px) {
-            .col-6 {
-                width: 100%;
-                margin-bottom: 2rem;
-            }
-            #carrinho {
-                width: 100%;
-            }
-        }
-        @media(max-width:1024px) {
-            #carrinho {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/form.css">
     <title>Formulário</title>
 </head>
 <body>
@@ -76,22 +13,23 @@
         <div class="row">
             <div class="col-6 sm-12">
                 <h3>Preencha o formulário e receba mais informações.</h3>
-                <form class="form">      <!--Não utilizado bootstrap no formulario por opção-->
+                <form class="form">
                     <p>Formulário</p>
                     <div class="input-box">
-                        <input type="text" name="nome" placeholder="Digite seu Nome" class="input-user" id="nome">
+                        <input type="text" name="nome" placeholder="Digite seu Nome" class="input-user" id="nome" onchange="disableButton()">
                     </div>
                     <div class="input-box">
-                        <input type="text" name="telefone" placeholder="Digite seu Telefone" class="input-user" id="telefone" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input type="text" name="telefone" placeholder="Digite seu Telefone" class="input-user" id="telefone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="disableButton()">
                     </div>
                     <div class="input-box">
-                        <input type="text" name="email" placeholder="Digite seu E-mail" class="input-user" id="email">
+                        <input type="text" name="email" placeholder="Digite seu E-mail" class="input-user" id="email" onchange="disableButton()">
                     </div>
                     <div class="input-box">
-                        <input type="text" name="endereço" placeholder="Digite seu Endereço" class="input-user" id="endereço">
+                        <input type="text" name="endereco" placeholder="Digite seu Endereço" class="input-user" id="endereco" onchange="disableButton()">
                     </div>
-                    <button class="btn btn-light">Enviar</button>
+                    <button class="btn btn-light" id="btn" disabled>Enviar</button>
                 </form>
+                <div class="mensagem-erro"></div>
             </div>
             <div class="col-6 sm-12">
                 <p>Velit, sequi autem nam veniam quisquam ab assumenda corrupti adipisci eligendi, at nisi saepe, vero hic? Impedit non nemo exercitationem ipsam numquam.</p>
@@ -99,5 +37,8 @@
             </div>
         </div>
     </div>
+    
+    <script src="./vandor/jquery/jquery-3.6.1.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
