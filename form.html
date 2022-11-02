@@ -17,19 +17,22 @@
                     <p>Formulário</p>
                     <div class="input-box">
                         <input type="text" name="nome" placeholder="Digite seu Nome" class="input-user" id="nome" onchange="disableButton()">
+                        <p class="erro-nome"></p>
                     </div>
                     <div class="input-box">
                         <input type="text" name="telefone" placeholder="Digite seu Telefone" class="input-user" id="telefone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="disableButton()">
+                        <p class="erro-telefone"></p>
                     </div>
                     <div class="input-box">
                         <input type="text" name="email" placeholder="Digite seu E-mail" class="input-user" id="email" onchange="disableButton()">
+                        <p class="erro-email"></p>
                     </div>
                     <div class="input-box">
                         <input type="text" name="endereco" placeholder="Digite seu Endereço" class="input-user" id="endereco" onchange="disableButton()">
+                        <p class="erro-endereco"></p>
                     </div>
-                    <button class="btn btn-light" id="btn" disabled>Enviar</button>
+                    <button class="btn btn-light" id="btn">Enviar</button>
                 </form>
-                <div class="mensagem-erro"></div>
             </div>
             <div class="col-6 sm-12">
                 <p>Velit, sequi autem nam veniam quisquam ab assumenda corrupti adipisci eligendi, at nisi saepe, vero hic? Impedit non nemo exercitationem ipsam numquam.</p>

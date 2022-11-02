@@ -57,3 +57,75 @@ $(document).ready(function() {
 $('.navbar-toggler').click(function(){
     $('#navbarResponsive').show();
 })
+
+
+
+/* Validação de formulário */
+
+
+function validaNome(elemento) {
+    elemento.addEventListener('focusout', function(event) {
+        event.preventDefault();
+        if(this.value == "") {
+            document.querySelector('.erro-nome').innerHTML = "Por favor, preencha o nome corretamente";
+        } else {
+            document.querySelector('.erro-nome').innerHTML = "";
+        }
+    });
+}
+let camposNome = document.querySelectorAll('input#nome');
+for( let emFoco of camposNome) {
+    validaNome(emFoco);
+}
+
+function validaTelefone(elemento) {
+    elemento.addEventListener('focusout', function(event) {
+        event.preventDefault();
+        if(this.value == "") {
+            document.querySelector('.erro-telefone').innerHTML = "Por favor, preencha o telefone corretamente";
+        } else {
+            document.querySelector('.erro-telefone').innerHTML = "";
+        }
+    });
+}
+let camposTelefone = document.querySelectorAll('input#telefone');
+for(let emFoco of camposTelefone) {
+    validaTelefone(emFoco);
+}
+
+
+function validaEmail(elemento) {
+    elemento.addEventListener('focusout', function(event) {
+        event.preventDefault();
+        const emailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?/i;
+        if(this.value.match(emailValido)) {
+            document.querySelector('.erro-email').innerHTML = "";
+        } else {
+            document.querySelector('.erro-email').innerHTML = "Por favor, preencha o e-mail corretamente";
+        }
+    });
+}
+let campusEmail = document.querySelectorAll('input#email');
+for( let emFoco of campusEmail) {
+    validaEmail(emFoco);
+}
+
+
+function validaEndereco(elemento) {
+    elemento.addEventListener('focusout', function(event) {
+        event.preventDefault();
+        
+        if(this.value == "") {
+            document.querySelector('.erro-endereco').innerHTML = "Por favor, preencha o endereço corretamente";
+        } else {
+            document.querySelector('.erro-endereco').innerHTML = "";
+        }
+    })
+}
+let campusEndereco = document.querySelectorAll('input#endereco');
+for(let emFoco of campusEndereco) {
+    validaEndereco(emFoco);
+}
+
+
+
