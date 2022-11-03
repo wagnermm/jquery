@@ -67,7 +67,7 @@ function validaNome(elemento) {
     elemento.addEventListener('focusout', function(event) {
         event.preventDefault();
         if(this.value == "") {
-            document.querySelector('.erro-nome').innerHTML = "Por favor, preencha o nome corretamente";
+            document.querySelector('.erro-nome').innerHTML = "Por favor, informe seu  nome";
         } else {
             document.querySelector('.erro-nome').innerHTML = "";
         }
@@ -82,7 +82,7 @@ function validaTelefone(elemento) {
     elemento.addEventListener('focusout', function(event) {
         event.preventDefault();
         if(this.value == "") {
-            document.querySelector('.erro-telefone').innerHTML = "Por favor, preencha o telefone corretamente";
+            document.querySelector('.erro-telefone').innerHTML = "Por favor, informe seu telefone";
         } else {
             document.querySelector('.erro-telefone').innerHTML = "";
         }
@@ -101,7 +101,7 @@ function validaEmail(elemento) {
         if(this.value.match(emailValido)) {
             document.querySelector('.erro-email').innerHTML = "";
         } else {
-            document.querySelector('.erro-email').innerHTML = "Por favor, preencha o e-mail corretamente";
+            document.querySelector('.erro-email').innerHTML = "Por favor, preencha o campo corretamente";
         }
     });
 }
@@ -116,7 +116,7 @@ function validaEndereco(elemento) {
         event.preventDefault();
         
         if(this.value == "") {
-            document.querySelector('.erro-endereco').innerHTML = "Por favor, preencha o endereço corretamente";
+            document.querySelector('.erro-endereco').innerHTML = "Por favor, informe seu endereço";
         } else {
             document.querySelector('.erro-endereco').innerHTML = "";
         }
@@ -129,3 +129,17 @@ for(let emFoco of campusEndereco) {
 
 
 
+/* Desabilitar botão */
+
+function disableButton() {
+    let nome = document.querySelector('#nome').value;
+    let telefone = document.querySelector('#telefone').value;
+    let email = document.querySelector('#email').value;
+    let endereco = document.querySelector('#endereco').value;
+    if(nome && telefone && email && endereco) {
+        document.querySelector('#btn').disabled = false;
+        return
+    } else {
+        document.querySelector('#btn').disabled = true;
+    }
+}

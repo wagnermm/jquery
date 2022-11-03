@@ -13,11 +13,10 @@ body {
     color: white;
 }
 .form {
-    margin-top: 2rem;
+    margin-top: 1rem;
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 15px;
+    padding: 10px;
     border: 3px solid dodgerblue;
     border-radius: 15px;
 }
