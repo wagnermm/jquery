@@ -69,6 +69,7 @@ a {
 }
 .bg-dark {
 	background-color: #fff!important;
+	border-bottom: 1px solid #eee;
 }
 #navbarResponsive {
 	z-index: 999;
@@ -156,6 +157,7 @@ a {
 }
 .featured-item {
 	border-radius: 5px;
+	border: 1px solid #eee;
 	padding: 20px;
 	transition: all 0.5s;
 }
@@ -429,6 +431,7 @@ a {
 }
 
 
+
 /* Single Product Style */
 .single-product .product-slider {
 	padding: 20px;
@@ -548,6 +551,7 @@ a {
 }
 
 
+
 /* About Us Style */
 .about-page {
 	margin-top: 50px;
@@ -592,6 +596,8 @@ a {
 .about-page .right-content span a:hover i {
 	background-color: #3a8bcd;
 }
+
+
 
 
 /* Contact Page Style */
@@ -663,6 +669,13 @@ a {
 	border: none;
 }
 
+/* Modal form */
+.modal-body .form-control {
+	width: 250px;
+	margin-bottom: 1rem;
+}
+
+
 /* Responsive Style */
 @media (max-width: 991px) {
 
@@ -722,9 +735,6 @@ a {
 
 @media (max-width: 767px) {
 
-	.navbar-brand {
-		margin: 0;
-	}
 	.subscribe-form .main-content form input.button {
 		margin-top: 20px;
 	}
@@ -735,8 +745,10 @@ a {
 
 }
 
-@media (max-width:480px) {
-	.featured-item {
-		padding: 0;
-	}
+::placeholder {
+	color: #fff;
+}
+
+#email {
+	position: relative;
 }

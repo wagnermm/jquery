@@ -1,23 +1,22 @@
-// instancia jquery e evita conflits
-// jQuery(function($) {
-
-$(document).ready(function() { 
+// instancia jquery e evita conflitos
+// jQuery( function($){
+$(document).ready(function() {
     
     $('.owl-carousel').owlCarousel();
     
-    let titulos = $('h4')  // tag
+    let titulos = $('h4') // tag
     
-    let itens = $('.feature')  // class
+    let itens = $('.featured-item') // class
     
-    let destaques = $('#feature')  // id
+    let destaques = $('#featured') // id
     
     console.log(titulos.first());
     
-    // configuracao de produtos
+    // Configuração de produtos
     
     $('.featured-item a').addClass('btn btn-dark stretch-link');
     
-    //$('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
+    $('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').addClass('active')
@@ -49,46 +48,75 @@ $(document).ready(function() {
         alert('Produto esgotado');
         
     })
+    
+    /* 
+    * Callback
+    * entendendo ações que começam ao temino de outra
+    */
+    
+    $('.featured-item:nth(1)')
+    .hide(500, function() {
+        // este é o callback
+        console.log($(this).find('h4').text() + ' esgotado')
+    })
+    .show(500, function() {
+        console.log($(this).find('h4').text() + ' em estoque')
+        
+        
+        /*
+        * Animações
+        */
+        const duracao = 1000 // equivalente a 1 segundo
+        $('.featured-item:nth(0)')
+        .hide(duracao)
+        .show(duracao)
+        .fadeOut(duracao)
+        .fadeIn(duracao)
+        .toogle(duracao)
+        .toogle(duracao)
+        
+    })  
 })
 
-/* 
-* Callback
-* entendendo ações que começam ao temino de outra
+$('.navbar-toggler').click(function(){
+    $('#navbarResponsive').show();
+})
+
+
+/*
+ * Animações no formulário
+ */
+$('#form-submit').on('click', function(e) {
+    
+    e.preventDefault()
+
+    if($('#email').val() != ''){
+        
+        $('#email').animate({
+            opacity: "toggle",
+            top: "-50"
+        }, 500, duracao, function() {
+            console.log($(this).val())
+        })
+    }
+});
+
+
+/*
+* Ouvinte de eventos nav-modal-open
 */
 
-$('.featured-item:nth(1)')
-.hide(500, function() {
-    // este é o callback
-    console.log($(this).find('h4').text() + ' esgotado')
-})
-.show(500, function() {
-    console.log($(this).find('h4').text() + ' em estoque')
+$('.nav-modal-open').on('click', function(e) {
     
+    e.preventDefault();
     
-    /*
-    * Animações
-    */
-    const duracao = 1000 // equivalente a 1 segundo
-    $('.featured-item:nth(0)')
-    .hide(duracao)
-    .show(duracao)
-    .fadeOut(duracao)
-    .fadeIn(duracao)
-    .toogle(duracao)
-    .toogle(duracao)
+    let elem = $(this).attr('rel')
     
-    $('#form-submit').on('click', function(e) {
-        
-        e.preventDefault()
-        
-        if($('#email').val() != ''){
-            
-            $('#email').animate({
-                opacity: "toggle",
-                top: "-50"
-            }, 500, duracao, function() {
-                console.log($(this).val())
-            })
-        }
-    });
+    $('.modal-body').html($('#'+elem).html())
+    $('.modal-header h5.modal-title').html($(this).text())
+    
+    let myModal = new bootstrap.Modal($('#modalId'))
+    
+    myModal.show()
+    
 })
