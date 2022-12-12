@@ -675,6 +675,10 @@ a {
 	margin-bottom: 1rem;
 }
 
+.invalid {
+	border-color: #f00;
+}
+
 
 /* Responsive Style */
 @media (max-width: 991px) {
@@ -741,8 +745,7 @@ a {
 	.featured-page #filters {
 		margin-top: 15px;
 		text-align: left;
-	} 
-
+	}
 }
 
 ::placeholder {
@@ -751,4 +754,8 @@ a {
 
 #email {
 	position: relative;
+}
+
+.modal {
+	margin-top: 50px;
 }

@@ -76,47 +76,105 @@ $(document).ready(function() {
         .toogle(duracao)
         
     })  
-})
-
-$('.navbar-toggler').click(function(){
-    $('#navbarResponsive').show();
-})
-
-
-/*
- * Animações no formulário
- */
-$('#form-submit').on('click', function(e) {
     
-    e.preventDefault()
-
-    if($('#email').val() != ''){
+    
+    
+    /*
+    * Exibir lista em menu hamburger
+    */
+    
+    $('.navbar-toggler').click(function(){
+        $('#navbarResponsive').show();
+    })
+    
+    $('.navbar-brand').click(function(){
+        $('#navbarResponsive').hide();
+    })
+    
+    
+    /*
+    * Animações no formulário
+    */
+    $('#form-submit').on('click', function(e) {
         
-        $('#email').animate({
-            opacity: "toggle",
-            top: "-50"
-        }, 500, duracao, function() {
-            console.log($(this).val())
-        })
+        e.preventDefault()
+        
+        if($('#email').val() != ''){
+            
+            $('#email').animate({
+                opacity: "toggle",
+                top: "-50"
+            }, 500, duracao, function() {
+                console.log($(this).val())
+            })
+        }
+    });
+    
+    
+    /*
+    * Ouvinte de eventos nav-modal-open
+    */
+    
+    $('.nav-modal-open').on('click', function(e) {
+        
+        e.preventDefault();
+        
+        let elem = $(this).attr('rel')
+        
+        $('.modal-body').html($('#'+elem).html())
+        $('.modal-header h5.modal-title').html($(this).text())
+        
+        let myModal = new bootstrap.Modal($('#modalId'))
+        
+        myModal.show()
+        
+    })
+    
+    
+    /*
+    * Validação de formulário
+    *
+    * TODO: incrementar a validação
+    * - checar se o nome é válido (mais de 2 caracteres)
+    * - checar se o email é válido (com ao menos um "@" e um ".")
+    */
+    function validate(elem) {
+        if(elem.val() == '' ) {
+            console.log('O campo ' + elem.attr('name') + ' é obrigatório')
+            elem.addClass('invalid')
+            return false
+        } else {
+            elem.removeClass('invalid')
+        }
     }
-});
-
-
-/*
-* Ouvinte de eventos nav-modal-open
-*/
-
-$('.nav-modal-open').on('click', function(e) {
     
-    e.preventDefault();
     
-    let elem = $(this).attr('rel')
+    $('body').on('submit', '.modal-body .form', function(e) {
+        
+        e.preventDefault()
+        
+        const inputName = $('#nome')
+        const inputEmail = $('#email')
+        
+        validate(inputName)
+        validate(inputEmail)
+        
+        if(inputName.hasClass('invalid') || inputEmail.hasClass('invalid')) {
+            console.log('Verificar os campos obrigatóios')
+            return false
+        } else {
+            $(this).submit()
+        }
+    })
     
-    $('.modal-body').html($('#'+elem).html())
-    $('.modal-header h5.modal-title').html($(this).text())
     
-    let myModal = new bootstrap.Modal($('#modalId'))
+    $('body').on('blur', '#nome', function() {
+        validate($(this))   
+    })
     
-    myModal.show()
+    $('body').on('blur', '#email', function() {
+        validate($(this))
+    })
+    
     
 })
