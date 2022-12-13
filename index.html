@@ -253,6 +253,41 @@
                     Digite um nome válido
                 </small>
             </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Data</label>
+                <input type="text" name="date" class="form-control" id="date" placeholder="Digite uma data" aria-describedby="helpDate">
+                <small id="helpDate" class="text-muted">
+                    Digite uma data válida
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Hora</label>
+                <input type="text" name="time" class="form-control" id="time" placeholder="Digite um horário" aria-describedby="helpTime">
+                <small id="helpTime" class="text-muted">
+                    Digite um horário válido
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" name="cep" class="form-control" id="cep" placeholder="Digite seu cep" aria-describedby="helpCep">
+                <small id="helpCep" class="text-muted">
+                    Digite um cep válido
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="Digite seu telefone" aria-describedby="helpPhone" required>
+                <small id="helpPhone" class="text-muted">
+                    Digite um telefone válido
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite seu cpf" aria-describedby="helpCpf" required>
+                <small id="helpCpf" class="text-muted">
+                    Digite um cpf válido
+                </small>
+            </div>
             
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -264,8 +299,9 @@
     
     
     <script src="./vendor/jquery/jquery-3.6.1.min.js"></script>
-    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="./vendor/owl/js/owl.js"></script>
+    <script src="./vendor/jquery-mask/jquery.mask.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

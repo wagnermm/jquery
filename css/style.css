@@ -669,10 +669,6 @@ a {
 	border: none;
 }
 
-.invalid {
-	border-color: #f00;
-}
-
 
 /* Responsive Style */
 @media (max-width: 991px) {
@@ -752,4 +748,12 @@ a {
 
 .modal {
 	margin-top: 50px;
+}
+
+.invalid {
+	border-color: #f00;
+}
+
+.text-muted {
+	display: none;
 }
