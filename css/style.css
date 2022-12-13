@@ -669,12 +669,6 @@ a {
 	border: none;
 }
 
-/* Modal form */
-.modal-body .form-control {
-	width: 250px;
-	margin-bottom: 1rem;
-}
-
 .invalid {
 	border-color: #f00;
 }

@@ -239,13 +239,19 @@
     
     <div id="contato" class="visually-hidden">
         <form action="" class="form">
-            <div class="col-md-4">
+            <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite seu nome" aria-describedby="helpNome"> 
+                <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite seu nome" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">
+                    Digite um nome válido
+                </small>
             </div>
-            <div class="col-md-4">
+            <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" name="email" class="form-control" id="email" placeholder="Digite seu e-mail" aria-describedby="helpEmail">
+                <small id="helpEmail" class="text-muted">
+                    Digite um nome válido
+                </small>
             </div>
             
             <button type="submit" class="btn btn-primary">Enviar</button>
